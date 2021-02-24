@@ -18,13 +18,13 @@ CREATE TABLE t_user(
 )CHARSET = utf8;
 
 CREATE TABLE t_posts(
-	Post_Id int NOT NULL,
+	Post_No int NOT NULL,
 	User_Id varchar(30) NOT NULL,
 	Title varchar(100) NOT NULL,
 	Context varchar(1000) NOT NULL,
 	Created_At datetime NOT NULL,
 	Updated_At datetime NOT NULL,
-	PRIMARY KEY (Post_Id)
+	PRIMARY KEY (Post_No)
 )CHARSET = utf8;
 
 # 시퀀스 생성 스크립트
@@ -50,10 +50,3 @@ INSERT INTO t_posts VALUES (nextval(s_posts), 'ccc', 'Title4','Content4,Content4
 INSERT INTO t_posts VALUES (nextval(s_posts), 'ccc', 'Title5','Content5,Content5,Content5.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 SELECT * FROM t_posts;
-
-
-
- 
-
-
-
