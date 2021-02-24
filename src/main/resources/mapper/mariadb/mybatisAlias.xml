@@ -4,5 +4,6 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="LoginVO" type="com.mycompany.proj.login.model.LoginVO"/>
+		<typeAlias alias="PostsVO" type="com.mycompany.proj.posts.model.PostsVO"/>
 	</typeAliases>
 </configuration>
