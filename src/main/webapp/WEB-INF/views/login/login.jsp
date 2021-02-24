@@ -21,7 +21,7 @@
             	var targetUrl = "/loginProcess";
             	var data = {
             		user_id: $("#user_id").val(),
-            		password: $("#password").val()
+            		password: $("#password").val(),
             	}
             	$.ajax({
             		type: "POST",
@@ -29,7 +29,8 @@
             		data: data,
             		success: function(result) {
 	   					if(result.success===true) {
-	   						alert("로그인 되었습니다.");
+	   						alert(result.user_name + " 님 환영합니다.");
+	   						location.href = "/posts";
 	   					} 
 	   					else {
 	   						alert("아이디와 패스워드를 확인하세요.");

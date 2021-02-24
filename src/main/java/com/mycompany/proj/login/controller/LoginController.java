@@ -40,6 +40,7 @@ public class LoginController {
 				map.put("success", true);
 				map.put("user_id", resultLoginVO.getUser_id());
 				map.put("password", resultLoginVO.getPassword());
+				map.put("user_name", resultLoginVO.getUser_name());
 			} 
 			else {
 				map.put("success", false);

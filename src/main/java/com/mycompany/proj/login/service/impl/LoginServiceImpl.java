@@ -14,11 +14,6 @@ import com.mycompany.proj.login.service.LoginService;
 public class LoginServiceImpl implements LoginService {
 	@Autowired
 	protected LoginDao loginDao;
-	
-	@Override
-	public String selectSampleData() throws Exception {
-		return loginDao.selectSampleData();
-	}
 
 	@Override
 	public LoginVO selectLoginInfo(LoginVO loginVO) throws Exception {
