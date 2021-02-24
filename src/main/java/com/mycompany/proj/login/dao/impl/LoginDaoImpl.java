@@ -15,11 +15,6 @@ public class LoginDaoImpl implements LoginDao {
 	protected SqlSessionTemplate sqlSession;
 	
 	@Override
-	public String selectSampleData() throws Exception {
-		return sqlSession.selectOne("LoginMapper.selectSampleTable");
-	}
-
-	@Override
 	public LoginVO selectLoginInfo(LoginVO loginVO) throws Exception {
 		return sqlSession.selectOne("LoginMapper.selectUserList", loginVO);
 	}
