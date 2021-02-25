@@ -21,4 +21,15 @@ public class PostsDaoImpl implements PostsDao{
 		return sqlSession.selectList("PostsMapper.selectPostsList", postsVO);
 	}
 
+	@Override
+	public PostsVO selectPostInfo(PostsVO postsVO) throws Exception {
+		return sqlSession.selectOne("PostsMapper.selectPostInfo", postsVO);
+
+	}
+
+	@Override
+	public void createPostInfo(PostsVO postsVO) throws Exception {
+		sqlSession.insert("PostsMapper.createPostInfo", postsVO);
+	}
+
 }

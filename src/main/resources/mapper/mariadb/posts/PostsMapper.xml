@@ -5,6 +5,29 @@
      <select id="selectPostsList" parameterType="PostsVO" resultType="PostsVO">
         select *
         from t_posts
- 
     </select>
+    
+    <select id="selectPostInfo" parameterType="PostsVO" resultType="PostsVO">
+        select *
+        from t_posts
+        where post_no = #{post_no}
+    </select>
+    
+     <insert id="createPostInfo" parameterType="PostsVO">
+        insert into t_posts (
+        	post_no
+        	, user_id
+        	, title
+        	, content
+        	, created_at
+        	, updated_at
+        ) values (
+        	nextval(s_posts)
+        	, #{user_id}
+        	, #{title}
+        	, #{content}
+        	, CURRENT_TIMESTAMP
+        	, CURRENT_TIMESTAMP
+        )
+    </insert>
 </mapper>

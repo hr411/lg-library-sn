@@ -11,6 +11,9 @@
 	<h1>
 		Posts Page!  
 	</h1>
+	<tr>
+		<button type="button" id="btn" onclick="location.href='/postCreate'">글쓰기</button>
+	</tr>
 	<table>
 		<thead>
 			<tr>
@@ -30,16 +33,13 @@
 			<tr>
 				<td>${post.post_no}</td>
 				<td>${post.user_id}</td>
-				<td>${post.title}</td>
+				<td><a href="posts/${post.post_no}">${post.title}</a></td>
 				<td>${post.created_at}</td>
 			</tr>
 		</c:forEach>
 		</tbody>
 	</table>
-	
-	<form>
-	
-    </form>
+
     <script type="text/javascript">
         $(function() {
             $("#btn").on("click", function() {

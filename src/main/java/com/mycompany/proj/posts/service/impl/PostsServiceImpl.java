@@ -20,4 +20,13 @@ public class PostsServiceImpl implements PostsService{
 		return postsDao.selectPostsList(postsVO);
 	}
 	
+	@Override
+	public PostsVO selectPostInfo(PostsVO postsVO) throws Exception {
+		return postsDao.selectPostInfo(postsVO);
+	}
+
+	@Override
+	public void createPostInfo(PostsVO postsVO) throws Exception {
+		postsDao.createPostInfo(postsVO);
+	}
 }
