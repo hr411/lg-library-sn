@@ -8,5 +8,7 @@ public interface PostsService {
 	public List<PostsVO> selectPostsList(PostsVO postsVO) throws Exception;
 	public PostsVO selectPostInfo(PostsVO postsVO) throws Exception;
 	public void createPostInfo(PostsVO postsVO) throws Exception;
+	public void deletePostInfo(PostsVO postsVO) throws Exception;
+
 
 }

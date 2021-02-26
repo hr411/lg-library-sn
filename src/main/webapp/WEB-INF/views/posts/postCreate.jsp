@@ -27,7 +27,7 @@
     <script type="text/javascript">
         $(function() {
             $("#save").on("click", function() {
-            	var targetUrl = "/postCreatProcess";
+            	var targetUrl = "/postCreateProcess";
             	var data = {
             		title: $("#title").val(),
             		content: $("#content").val(),
@@ -43,7 +43,7 @@
 	   						location.href = "/posts";
 	   					} 
 	   					else {
-	   						alert("저장되지않았습니다.");
+	   						alert("저장되지 않았습니다.");
 	   					}
    					},
 	            	error: function(e){

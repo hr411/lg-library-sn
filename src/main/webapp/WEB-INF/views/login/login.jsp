@@ -20,8 +20,8 @@
             $("#btn").on("click", function() {
             	var targetUrl = "/loginProcess";
             	var data = {
-            		user_id: $("#user_id").val(),
-            		password: $("#password").val(),
+            		user_id: $('#user_id').val(),
+            		password: $('#password').val(),
             	}
             	$.ajax({
             		type: "POST",

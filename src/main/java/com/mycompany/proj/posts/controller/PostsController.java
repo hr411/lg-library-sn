@@ -57,11 +57,28 @@ public class PostsController {
 		return "posts/postCreate";
 	}
 	
-	@RequestMapping(value = "/postCreatProcess", method = RequestMethod.POST)
+	@RequestMapping(value = "/postCreateProcess", method = RequestMethod.POST)
 	public @ResponseBody HashMap<String, Object> postSave(HttpServletRequest req, PostsVO postsVO,  Model model) {
 		HashMap<String, Object> map = new HashMap<String,Object>();
 		try {
 			postsService.createPostInfo(postsVO);
+			map.put("success", true);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return map;
+	}
+	
+	@RequestMapping(value = "/postDeleteProcess/{post_no}", method = RequestMethod.DELETE)
+	public @ResponseBody HashMap<String, Object> postDelete(@PathVariable("post_no") String post_no, Model model)  {
+		logger.info("dlafjdlkfjaldfj" + post_no);
+		HashMap<String, Object> map = new HashMap<String,Object>();
+		try
+		{
+			PostsVO postsVO = new PostsVO();
+			postsVO.setPost_no(post_no);
+			postsService.deletePostInfo(postsVO);
 			map.put("success", true);
 		} 
 		catch (Exception e) {

@@ -32,4 +32,9 @@ public class PostsDaoImpl implements PostsDao{
 		sqlSession.insert("PostsMapper.createPostInfo", postsVO);
 	}
 
+	@Override
+	public void deletePostInfo(PostsVO postsVO) throws Exception {
+		sqlSession.delete("PostsMapper.deletePostInfo", postsVO);		
+	}
+
 }

@@ -29,4 +29,10 @@ public class PostsServiceImpl implements PostsService{
 	public void createPostInfo(PostsVO postsVO) throws Exception {
 		postsDao.createPostInfo(postsVO);
 	}
+
+	@Override
+	public void deletePostInfo(PostsVO postsVO) throws Exception {
+		postsDao.deletePostInfo(postsVO);
+	
+	}
 }

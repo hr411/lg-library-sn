@@ -11,6 +11,7 @@
 	<h1>
 		Post Info!  
 	</h1>
+	<input type="hidden" value="${resultpostVO.post_no}" id="post_no"/>
 	<table>
 		<tr>
 			<td>제목</td>
@@ -23,13 +24,31 @@
 		
 	</table>
 	<tr>
-		<button type="button" id="btn" onclick="location.href='/posts'">목록</button>
+		<button type="button" id="list" onclick="location.href='/posts'">목록</button>
+		<button type="button" id="del">삭제</button>
 	</tr>
 
     <script type="text/javascript">
-        $(function() {
-            $("#btn").on("click", function() {
-            	            
+         $(function() {
+            $("#del").on("click", function() {
+            	var targetUrl = "/postDeleteProcess/" + $('#post_no').val();	
+            	$.ajax({
+            		type: "DELETE",
+            		url: targetUrl,
+            		success: function(result) {
+	   					if(result.success===true) {
+	   						alert("삭제되었습니다.");
+	   						location.href = "/posts";
+	   					} 
+	   					else {
+	   						alert("삭제되지 않았습니다.");
+	   					}
+   					},
+	            	error: function(e){
+	            		alert("error", e);
+	            	}
+            	}); 
+            });                    
         });
      </script>
   
