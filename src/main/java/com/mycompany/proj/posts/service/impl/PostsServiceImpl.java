@@ -35,4 +35,9 @@ public class PostsServiceImpl implements PostsService{
 		postsDao.deletePostInfo(postsVO);
 	
 	}
+
+	@Override
+	public void updatePostInfo(PostsVO postsVO) throws Exception {
+		postsDao.updatePostInfo(postsVO);
+	}
 }

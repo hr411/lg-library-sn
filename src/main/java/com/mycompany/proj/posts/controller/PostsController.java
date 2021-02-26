@@ -11,11 +11,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.mycompany.proj.login.model.LoginVO;
 import com.mycompany.proj.posts.model.PostsVO;
 import com.mycompany.proj.posts.service.PostsService;
 
@@ -58,7 +58,7 @@ public class PostsController {
 	}
 	
 	@RequestMapping(value = "/postCreateProcess", method = RequestMethod.POST)
-	public @ResponseBody HashMap<String, Object> postSave(HttpServletRequest req, PostsVO postsVO,  Model model) {
+	public @ResponseBody HashMap<String, Object> postCreateProcess(HttpServletRequest req, PostsVO postsVO,  Model model) {
 		HashMap<String, Object> map = new HashMap<String,Object>();
 		try {
 			postsService.createPostInfo(postsVO);
@@ -71,14 +71,42 @@ public class PostsController {
 	}
 	
 	@RequestMapping(value = "/postDeleteProcess/{post_no}", method = RequestMethod.DELETE)
-	public @ResponseBody HashMap<String, Object> postDelete(@PathVariable("post_no") String post_no, Model model)  {
-		logger.info("dlafjdlkfjaldfj" + post_no);
+	public @ResponseBody HashMap<String, Object> postDeleteProcess(@PathVariable("post_no") String post_no, Model model)  {
 		HashMap<String, Object> map = new HashMap<String,Object>();
 		try
 		{
 			PostsVO postsVO = new PostsVO();
 			postsVO.setPost_no(post_no);
 			postsService.deletePostInfo(postsVO);
+			map.put("success", true);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return map;
+	}
+	
+	@RequestMapping(value = "/postUpdate/{post_no}", method = RequestMethod.GET)
+	public String postUpdate(@PathVariable("post_no") String post_no, Model model) {
+		try {
+			PostsVO postsVO = new PostsVO();
+			postsVO.setPost_no(post_no);
+			PostsVO resultpostVO = postsService.selectPostInfo(postsVO);
+			model.addAttribute("resultpostVO", resultpostVO);
+						
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "posts/postUpdate";
+	}
+	
+	@RequestMapping(value = "/postUpdateProcess/{post_no}", method = RequestMethod.PUT)
+	public @ResponseBody HashMap<String, Object> postUpdateProcess(@PathVariable("post_no") String post_no, @RequestBody PostsVO postsVO, Model model)  {
+		HashMap<String, Object> map = new HashMap<String,Object>();
+		try
+		{
+			postsVO.setPost_no(post_no);
+			postsService.updatePostInfo(postsVO);
 			map.put("success", true);
 		} 
 		catch (Exception e) {

@@ -37,4 +37,9 @@ public class PostsDaoImpl implements PostsDao{
 		sqlSession.delete("PostsMapper.deletePostInfo", postsVO);		
 	}
 
+	@Override
+	public void updatePostInfo(PostsVO postsVO) throws Exception {
+		sqlSession.update("PostsMapper.updatePostInfo", postsVO);				
+	}
+
 }

@@ -36,4 +36,12 @@
     	from t_posts
     	where post_no = #{post_no} 
     </delete>
+    
+     <update id="updatePostInfo" parameterType="PostsVO">
+    	update t_posts set 
+    	title = #{title}
+    	, content = #{content}
+    	, updated_at = CURRENT_TIMESTAMP
+    	where post_no = #{post_no} 
+    </update>
 </mapper>

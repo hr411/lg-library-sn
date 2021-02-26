@@ -26,29 +26,30 @@
 	<tr>
 		<button type="button" id="list" onclick="location.href='/posts'">목록</button>
 		<button type="button" id="del">삭제</button>
+		<button type="button" id="update" onclick="location.href='/postUpdate/${resultpostVO.post_no}'">수정</button>
 	</tr>
 
     <script type="text/javascript">
-         $(function() {
-            $("#del").on("click", function() {
-            	var targetUrl = "/postDeleteProcess/" + $('#post_no').val();	
-            	$.ajax({
-            		type: "DELETE",
-            		url: targetUrl,
-            		success: function(result) {
-	   					if(result.success===true) {
-	   						alert("삭제되었습니다.");
-	   						location.href = "/posts";
-	   					} 
-	   					else {
+        $(function() {
+           $("#del").on("click", function() {
+           	var targetUrl = "/postDeleteProcess/" + $('#post_no').val();	
+           	$.ajax({
+            	type: "DELETE",
+            	url: targetUrl,
+            	success: function(result) {
+	   				if(result.success===true) {
+	   					alert("삭제되었습니다.");
+	   					location.href = "/posts";
+						} 
+	   				else {
 	   						alert("삭제되지 않았습니다.");
 	   					}
-   					},
-	            	error: function(e){
-	            		alert("error", e);
-	            	}
-            	}); 
-            });                    
+	   				},
+	        		error: function(e){
+	        			alert("error", e);
+	        		}
+	     		}); 
+            });                                    
         });
      </script>
   

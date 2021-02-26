@@ -41,10 +41,7 @@
 	</table>
 
     <script type="text/javascript">
-        $(function() {
-            $("#btn").on("click", function() {
-            	            
-        });
+ 
      </script>
   
 </body>
