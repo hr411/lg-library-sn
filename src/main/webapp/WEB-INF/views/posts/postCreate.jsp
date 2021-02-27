@@ -4,8 +4,9 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Post Create </title>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<title>Post Create</title>
+	<script src="/resources/jquery/3.5.1/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" media="screen" href="/resources/css/reset.css" />
 </head>
 <body>
 	<h1>

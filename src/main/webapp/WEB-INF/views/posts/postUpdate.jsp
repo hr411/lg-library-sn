@@ -5,7 +5,8 @@
 <html>
 <head>
 	<title>Post Update</title>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="/resources/jquery/3.5.1/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" media="screen" href="/resources/css/reset.css" />
 </head>
 <body>
 	<h1>
@@ -24,7 +25,7 @@
 		
 	</table>
 	<tr>
-		<button type="button" id="list" onclick="location.href='/postInfo/${post.post_no}'">취소</button>
+		<button type="button" id="list" onclick="location.href='/posts/${resultpostVO.post_no}'">취소</button>
 		<button type="button" id="update">수정</button>
 	</tr>
 

@@ -5,15 +5,13 @@
 <html>
 <head>
 	<title>Posts</title>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="/resources/jquery/3.5.1/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" media="screen" href="/resources/css/reset.css" />
 </head>
 <body>
 	<h1>
 		Posts Page!  
 	</h1>
-	<tr>
-		<button type="button" id="btn" onclick="location.href='/postCreate'">글쓰기</button>
-	</tr>
 	<table>
 		<thead>
 			<tr>
@@ -39,6 +37,9 @@
 		</c:forEach>
 		</tbody>
 	</table>
+	<tr>
+		<button type="button" id="btn" onclick="location.href='/postCreate'">글쓰기</button>
+	</tr>
 
     <script type="text/javascript">
  

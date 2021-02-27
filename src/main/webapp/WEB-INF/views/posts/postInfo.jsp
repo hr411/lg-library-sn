@@ -5,7 +5,8 @@
 <html>
 <head>
 	<title>Post Info</title>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="/resources/jquery/3.5.1/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" media="screen" href="/resources/css/reset.css" />
 </head>
 <body>
 	<h1>

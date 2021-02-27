@@ -4,21 +4,34 @@
 <html>
 <head>
 	<title>Login</title>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="/resources/jquery/3.5.1/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" media="screen" href="/resources/css/reset.css" />
 </head>
 <body>
 	<h1>
 		Login Page!  
 	</h1>
-	<form>
-		아이디 : <input type="text" name="user_id" id="user_id">
-		패스워드 :<input type="password" name="password" id="password">
-	     <button type="button" id="btn">로그인</button>
-    </form>
+	<p></p>
+	<div class="div-login">
+		<form>
+			<p>아이디 : <input type="text" name="user_id" id="user_id"></p>
+			<p>패스워드 :<input type="password" name="password" id="password"></p>
+	    </form>
+    </div>
+    <div>
+    	<button type="button" id="btn">로그인</button>
+    </div>
     <script type="text/javascript">
         $(function() {
             $("#btn").on("click", function() {
-            	var targetUrl = "/loginProcess";
+            	submitLogin(); 
+            });
+            $("#password").keydown(function(key) {
+            	if(key.keyCode == 13) submitLogin();
+            }); 
+        });
+        function submitLogin(){
+        	var targetUrl = "/loginProcess";
             	var data = {
             		user_id: $('#user_id').val(),
             		password: $('#password').val(),
@@ -40,9 +53,8 @@
 	            	error: function(e){
 	            		alert("error", e);
 	            	}
-            	});         
-            });            
-        });
+            	});   
+        }
      </script>
   
 </body>
