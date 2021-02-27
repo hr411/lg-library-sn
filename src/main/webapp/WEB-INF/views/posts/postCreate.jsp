@@ -8,38 +8,40 @@
 	<script src="/resources/jquery/3.5.1/jquery.min.js"></script>
 	<script src="/resources/jquery-validation/1.19.3/jquery.validation.js"></script>
 	<link type="text/css" rel="stylesheet" media="screen" href="/resources/css/reset.css"/>
+	<link type="text/css" rel="stylesheet" media="screen" href="/resources/css/css.css"/>
 </head>
 <body>
 	<h1>
-		글쓰기 
+		Post Create
 	</h1>
 	<div class="div-post">
 		<form id="post-form">	
 			<div>
-				<table>
-					<tr>
-						<td>제목</td>
-						<td><input type="text" name="title" id="title"></td>
-					</tr>
-					<tr>
-						<td>내용</td>
-						<td><textarea type="text" name="content" id="content"></textarea></td>
-					</tr>
-				</table>
+				<p><label class="form-label">제목</lable></label></p>
+				<p><input type="text" name="title" id="title" class="input-post-form"></p>
+				<p><label class="form-label">내용</lable></p>
+				<p><textarea name="content" id="content"></textarea></p>
 			</div>
 			<div>
 				<button type="submit" id="save">저장</button>
+				<button type="button" id="list" onclick="location.href='/posts'">취소</button>
+				
 			</div>
 		</form>
 	</div>	
 
 <script type="text/javascript">
 $(function() {
+	$('input[type="text"]').keydown(function(e){
+		if(e.keyCode === 13){
+			e.preventDefault();
+		};
+	});	
 	$("#save").on("click", function() {	
 		$("#post-form").validate({
        		rules: {
-      			title: "required",
-       			content: "required"
+      			title: {required: true, rangelength: [1, 100]},
+       			content: {required: true, rangelength: [1, 1000]}
      		},
       		messages: {
        			title: "제목은 필수 입력값입니다.",

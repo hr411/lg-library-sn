@@ -6,13 +6,14 @@
 <head>
 	<title>Posts</title>
 	<script src="/resources/jquery/3.5.1/jquery.min.js"></script>
-	<link type="text/css" rel="stylesheet" media="screen" href="/resources/css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="screen" href="/resources/css/reset.css"/>
+	<link type="text/css" rel="stylesheet" media="screen" href="/resources/css/css.css"/>
 </head>
 <body>
 	<h1>
-		Posts Page!  
+		Posts
 	</h1>
-	<table>
+	<table class="posts">
 		<thead>
 			<tr>
 				<th>No</th>
@@ -39,12 +40,7 @@
 	</table>
 	<tr>
 		<button type="button" id="btn" onclick="location.href='/postCreate'">글쓰기</button>
-	</tr>
-
-    <script type="text/javascript">
- 
-     </script>
-  
+	</tr> 
 </body>
 
 	

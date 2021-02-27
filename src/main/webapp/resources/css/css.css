@@ -1,0 +1,88 @@
+* {
+	font-family: Helvetica, Arial, sans-serif;
+}
+h1{
+  	font-size: 20px;
+    font-weight: bold;
+}
+.div-input {
+	height:70px;
+	margin-bottom: 10px;
+	
+}
+.form-label {
+	display: block;
+	margin-bottom: 5px;
+}
+label.error { 
+	display:block;
+	color: red;
+	font-size: 12px; 
+	padding: 36px 0 0 5px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+.input-login-form {
+ 	background: #fff;
+  	border: 1px solid #999;
+  	font-size: 13px;
+  	height: 30px;
+  	margin: 0;
+  	padding: 0 0 0 5px;
+  	width: 100%;
+}
+.btn-login-form {
+	background-color: blue;
+  	border: 2px solid #999;
+  	color: white;
+  	padding: 5px 5px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+  	margin: 4px 2px;
+  	cursor: pointer;
+}
+.div-login {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 400px;
+}
+.div-login-form {
+	background-color:yellow;
+	width:400px;
+	padding:20px
+}
+.posts{
+	width:500px;
+ 	border:1px solid orange;
+	border-collapse:collapse;
+}
+.posts thead{
+	font-size:12px;
+	border:1px solid orange;
+	background-color:yellow;
+}
+.posts tbody{
+	font-size:12px;
+	border:1px solid orange;
+	padding:3px;
+}
+textarea{
+	background: #fff;
+  	border: 1px solid #999;
+	width:500px; 
+	height:100px; 
+	resize: vertical;
+	font-size: 13px;
+	padding: 0 0 0 5px;
+}
+.input-post-form {
+ 	background: #fff;
+  	border: 1px solid #999;
+  	font-size: 13px;
+  	margin: 0;
+  	padding: 0 0 0 5px;
+  	width: 500px;
+}

@@ -6,26 +6,35 @@
 	<title>Login</title>
 	<script src="/resources/jquery/3.5.1/jquery.min.js"></script>
 	<script src="/resources/jquery-validation/1.19.3/jquery.validation.js"></script>
-	<link type="text/css" rel="stylesheet" media="screen" href="/resources/css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="screen" href="/resources/css/reset.css"/>
+	<link type="text/css" rel="stylesheet" media="screen" href="/resources/css/css.css"/>
 </head>
 <body>
-	<h1>
-		Login Page!  
-	</h1>
 	<div class="div-login">
-		<form id="login-form">
-			<div>
-				<p>아이디 : <input type="text" name="user_id" id="user_id"></p>
-				<p>패스워드 :<input type="password" name="password" id="password"></p>
-			</div>
-			<div>
-    			<button type="submit" id="btn">로그인</button>
-    		</div>
-	    </form>
+		<div class="div-login-form">
+			<form id="login-form">
+				<div class="div-input">
+					<p><label class="form-label">아이디</label></p>
+					<p><input type="text" name="user_id" id="user_id" class="input-login-form"/></p>
+				</div>
+				<div class="div-input">
+					<p><label class="form-label">패스워드</label></p>
+					<p><input type="password" name="password" id="password" class="input-login-form"></p>				
+				</div>			
+				<div>
+	    			<button type="submit" id="btn" class="btn-login-form">로그인</button>
+	    		</div>
+		    </form>
+	    </div>
     </div>
-   
-<script type="text/javascript">
+</body>   
+<script >
 $(function(){
+	$('input[type="text"]').keydown(function(e){
+		if(e.keyCode === 13){
+			e.preventDefault();
+		};
+	});	
 	$("#btn").click(function() {
 		$("#login-form").validate({
        		rules: {
@@ -63,15 +72,9 @@ $(function(){
            	}
        	});
 	});
-    $("#password").keydown(function(key) {
-   		if(key.keyCode == 13) {
-   			$("#btn").click();
-       	}
-   	});
 });    
 </script>
   
-</body>
 
 	
 	
