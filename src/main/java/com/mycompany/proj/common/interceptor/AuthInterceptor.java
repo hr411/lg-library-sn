@@ -17,16 +17,10 @@ public class AuthInterceptor extends WebContentInterceptor {
 	@Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException {
         try {
-        	logger.info("AuthInterceptor::preHandle:"+request.getRequestURI());
         	String uri = request.getRequestURI();
-        	boolean ttt = uri.equals("/");
-        	logger.info(String.valueOf(ttt));
         	if(uri.equals("/")||uri.equals("/login")||uri.equals("/loginProcess")) {
-        		logger.info("AuthInterceptor::preHandle:1");
         	} else {
-        		logger.info("AuthInterceptor::preHandle:2");
-        		String isLogin = (String) request.getSession().getAttribute("isLogin");
-	        	logger.info("AuthInterceptor::preHandle:isLogin:"+String.valueOf(isLogin));
+          		String isLogin = (String) request.getSession().getAttribute("isLogin");
         		if(isLogin==null) {
         			request.getRequestDispatcher(request.getContextPath() + "/login").forward(request, response);
         			return false;
@@ -42,7 +36,6 @@ public class AuthInterceptor extends WebContentInterceptor {
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
     	try {
-        	logger.info("AuthInterceptor::postHandle:"+request.getRequestURI());
         } catch (Exception e) {
         	e.getStackTrace();
         }
