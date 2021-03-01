@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,16 +31,16 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
-	public @ResponseBody HashMap<String, Object> loginProcess(HttpServletRequest req, LoginVO loginVO,  Model model) {
+	public @ResponseBody HashMap<String, Object> loginProcess(HttpServletRequest req, LoginVO loginVO,  Model model, HttpSession session) {
 		HashMap<String, Object> map = new HashMap<String,Object>();
 		try {
-          
 			LoginVO resultLoginVO = loginService.selectLoginInfo(loginVO);
 			if(resultLoginVO!=null) {
 				map.put("success", true);
 				map.put("user_id", resultLoginVO.getUser_id());
 				map.put("password", resultLoginVO.getPassword());
 				map.put("user_name", resultLoginVO.getUser_name());
+				session.setAttribute("isLogin", resultLoginVO.getUser_id());
 			} 
 			else {
 				map.put("success", false);
@@ -48,5 +49,10 @@ public class LoginController {
 			e.printStackTrace();
 		}
 		return map;
+	}
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpServletRequest req, LoginVO loginVO,  Model model) {
+		req.getSession().invalidate();
+		return "forward:/";
 	}
 }

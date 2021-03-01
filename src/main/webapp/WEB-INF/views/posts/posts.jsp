@@ -38,10 +38,17 @@
 		</c:forEach>
 		</tbody>
 	</table>
-	<tr>
+	<div>
 		<button type="button" id="btn" onclick="location.href='/postCreate'">글쓰기</button>
-	</tr> 
+		<button type="button" id="logout" onclick="doLogout()">로그아웃</button>
+	</div>
 </body>
+<script>
+function doLogout() {
+	alert('로그아웃합니다.');
+	location.href='/logout';
+}
+</script>
 
 	
 	
