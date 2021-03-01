@@ -15,18 +15,19 @@
 	</h1>
 	<input type="hidden" value="${resultpostVO.post_no}" id="post_no"/>
 	<input type="hidden" value="${resultpostVO.user_id }" id="user_id"/>
-		<label class="form-label">제목</lable>
-		<p><class="input-post-form>${resultpostVO.title}</p>
-		<label class="form-label">내용</lable>
-		<p>${resultpostVO.content}</p>
-		</tr>
-		
-	</table>
-	<div>
-		<button type="button" id="list" onclick="location.href='/posts'">목록</button>
-		<div id="user-own-post">
-			<button type="button" id="del">삭제</button>
-			<button type="button" id="update" onclick="location.href='/postUpdate/${resultpostVO.post_no}'">수정</button>
+	<div class ="div-post">
+		<div>
+			<label class="form-label">제목</label>
+			<p class="p-post-title">${resultpostVO.title}</p>
+			<label class="form-label">내용</label>
+			<p class="p-post-content">${resultpostVO.content}</p>
+		</div>
+		<div>
+			<button type="button" id="list" onclick="location.href='/posts'">목록</button>
+			<div id="user-own-post">
+				<button type="button" id="del">삭제</button>
+				<button type="button" id="update" onclick="location.href='/postUpdate/${resultpostVO.post_no}'">수정</button>
+			</div>
 		</div>
 	</div>
 </body>

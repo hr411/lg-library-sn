@@ -16,18 +16,20 @@
 	</h1>
 	<div class="div-post">
 		<form id="post-form">
-			<div>
+			<div class="div-input">
 				<input type="hidden" value="${resultpostVO.post_no}" id="post_no"/>
-				<label class="form-label" >제목</lable>
+				<label class="form-label" >제목</label>
 				<p><input type="text" name="title" id="title" class="input-post-form" value="${resultpostVO.title}"></p>
-				<label class="form-label">내용</lable>
+			</div>
+			<div class="div-textarea">
+				<label class="form-label">내용</label>
 				<p><textarea name="content" id="content">${resultpostVO.content}</textarea></p>
 			</div>
 			<div>
 				<button type="submit" id="update">수정</button>
 				<button type="button" id="list" onclick="location.href='/posts/${resultpostVO.post_no}'">취소</button>			
 			</div>	
-		<form>
+		</form>
 	</div>
 <script>
 $(function() {

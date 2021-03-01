@@ -16,10 +16,12 @@
 	</h1>
 	<div class="div-post">
 		<form id="post-form">	
-			<div>
-				<p><label class="form-label">제목</lable></label></p>
+			<div class="div-input">
+				<label class="form-label">제목</lable></label>
 				<p><input type="text" name="title" id="title" class="input-post-form"></p>
-				<p><label class="form-label">내용</lable></p>
+			</div>
+			<div class="div-textarea">
+				<label class="form-label">내용</label>
 				<p><textarea name="content" id="content"></textarea></p>
 			</div>
 			<div>
