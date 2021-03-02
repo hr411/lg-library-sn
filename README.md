@@ -17,6 +17,7 @@ test - spring legacy project
 - Test
   |`- src/main
   |  |- java/com/mycompany/proj001
+  |  |  |- common/interceptor             * 공통모듈(인터셉터)
   |  |  |- home                           * home 컴포넌트(legacy 샘플)
   |  |  |- login                          * login 컴포넌트
   |  |  |  |- controller 
