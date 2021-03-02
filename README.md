@@ -45,9 +45,10 @@ test - spring legacy project
   |      |- spring
   |      |  |- sppServlet
   |      |  |  `- servlet-context.xml    * servlet 설정파일
+  |      |  |- db-context.xml            * database 관련 설정파일
   |      |  `- root-context.xml          * context-param의 메인 설정파일
   |      |- views                        * 화면 파일
-  |      `- web.xml                      * tomcat 설정 파일
+  |      `- web.xml                      * tomcat 설정파일
   |- create_database.sql                 * database 스크립트
   |- pom.xml                             * maven project object model 파일
   `- README.md                           * github README 파일
