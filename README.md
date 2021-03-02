@@ -50,7 +50,7 @@ test - spring legacy project
   |- create_database.sql                 * database 스크립트
   |- pom.xml                             * maven project object model 파일
   `- README.md                           * github README 파일
-
+```
 
 # 실행 방법
 - 프로젝트를 STS4 워크스페이스에 임포트
